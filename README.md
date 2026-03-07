@@ -1,30 +1,55 @@
-# Simple Notes App taken from TWS Community to practice docker commands
-This is a simple notes app built with React and Django.
+# Simple Notes App – Docker Practice Project
 
-## Requirements
-1. Python 3.9
-2. Node.js
-3. React
+This is a simple Notes application built with **React (frontend)** and **Django (backend)**.
+The project is used to practice **Docker image creation and container execution**.
+
+## Prerequisites
+
+Make sure the following tool is installed:
+
+* Docker
 
 ## Installation
-1. Clone the repository
+
+### 1. Clone the repository
+
 ```
-git clone https://github.com/LondheShubham153/django-notes-app.git
+git clone https://github.com/Coder-Sourabh/django-notes-app-docker.git
 ```
 
-2. Build the app
+### 2. Navigate to the project directory
+
 ```
-docker build -t notes-app .
+cd django-notes-app-docker
 ```
 
-3. Run the app
+### 3. Build the Docker image
+
+```
+docker build -t notes-app:latest .
+```
+
+### 4. Run the container
+
 ```
 docker run -d -p 8000:8000 notes-app:latest
 ```
 
-## Nginx
+### 5. Access the application
 
-Install Nginx reverse proxy to make this application available
+Open your browser and visit:
 
-`sudo apt-get update`
-`sudo apt install nginx`
+```
+http://localhost:8000
+```
+
+## Nginx (Optional)
+
+You can configure **Nginx as a reverse proxy** to expose the application in a production environment.
+
+Install Nginx:
+
+```
+sudo apt update
+sudo apt install nginx
+```
